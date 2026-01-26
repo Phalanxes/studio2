@@ -14,12 +14,13 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { voicePersonas } from '@/lib/data';
-import { Clock, Plus, Video, Mic, Film } from 'lucide-react';
+import { Clock, Plus, Video, Mic, Film, Trash2 } from 'lucide-react';
 import { VisualsModal } from './visuals-modal';
 import { useState } from 'react';
 
 export default function SceneRow({ scene }: { scene: Scene }) {
-  const { addScene, updateSceneAudio, updateScene } = useStoryboard();
+  const { addScene, deleteScene, updateSceneAudio, updateScene } =
+    useStoryboard();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDurationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -138,6 +139,14 @@ export default function SceneRow({ scene }: { scene: Scene }) {
           aria-label="Add new scene after this one"
         >
           <Plus className="h-5 w-5" />
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => deleteScene(scene.id)}
+          aria-label="Delete this scene"
+        >
+          <Trash2 className="h-5 w-5 text-destructive" />
         </Button>
       </div>
     </div>

@@ -13,6 +13,7 @@ import type { Scene } from '@/lib/types';
 type StoryboardContextType = {
   scenes: Scene[];
   addScene: (afterIndex: number) => void;
+  deleteScene: (sceneId: string) => void;
   updateScene: (
     sceneId: string,
     updatedData: Partial<Scene> | ((scene: Scene) => Partial<Scene>)
@@ -48,6 +49,25 @@ export function StoryboardProvider({ children }: { children: React.ReactNode }) 
         newScenes[i].orderIndex++;
       }
       newScenes.splice(afterIndex + 1, 0, newScene);
+      return newScenes;
+    });
+  }, []);
+
+  const deleteScene = useCallback((sceneId: string) => {
+    setScenes(prevScenes => {
+      const sceneToDelete = prevScenes.find(s => s.id === sceneId);
+      if (!sceneToDelete) {
+        return prevScenes;
+      }
+      const deletedOrderIndex = sceneToDelete.orderIndex;
+      const newScenes = prevScenes
+        .filter(scene => scene.id !== sceneId)
+        .map(scene => {
+          if (scene.orderIndex > deletedOrderIndex) {
+            return { ...scene, orderIndex: scene.orderIndex - 1 };
+          }
+          return scene;
+        });
       return newScenes;
     });
   }, []);
@@ -95,6 +115,7 @@ export function StoryboardProvider({ children }: { children: React.ReactNode }) 
   const value = {
     scenes,
     addScene,
+    deleteScene,
     updateScene,
     updateSceneVisual,
     updateSceneAudio,
