@@ -202,8 +202,17 @@ export default function SceneRow({ scene }: { scene: Scene }) {
           </Button>
         </div>
         {scene.audio.url && (
-          <div className="pt-2">
+          <div className="flex items-center gap-2 pt-2">
             <audio src={scene.audio.url} controls className="w-full" />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => updateSceneAudio(scene.id, { url: undefined })}
+              aria-label="Delete audio"
+              className="text-muted-foreground hover:text-destructive"
+            >
+              <Trash2 className="h-4 w-4" />
+            </Button>
           </div>
         )}
       </div>
