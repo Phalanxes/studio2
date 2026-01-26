@@ -35,7 +35,7 @@ function PageContent() {
     toast({
       title: 'Starting Compilation',
       description:
-        'This may take a few minutes. A new video will be generated from your script.',
+        'This may take a few minutes. A new video will be generated from your script using a single narrator voice.',
     });
 
     try {

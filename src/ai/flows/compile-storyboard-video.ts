@@ -10,6 +10,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
 import type { Scene } from '@/lib/types';
+import { stockVideos } from '@/lib/data';
 
 const CompileVideoInputSchema = z.object({
   scenes: z.array(z.any()),
@@ -39,11 +40,29 @@ const compileStoryboardVideoFlow = ai.defineFlow(
       0
     );
 
-    const fullScript = scenes
-      .map((scene: Scene) => scene.audio.scriptText)
-      .join(' ');
+    const fullStory = scenes
+      .map((scene: Scene, index: number) => {
+        let visualDesc = 'A neutral, abstract visual.';
+        if (scene.visual.type === 'generated' && scene.visual.prompt) {
+          visualDesc = `Visual: ${scene.visual.prompt}.`;
+        } else if (
+          scene.visual.type === 'stock' &&
+          scene.visual.thumbnailUrl
+        ) {
+          const stockVideo = stockVideos.find(
+            v => v.thumbnailUrl === scene.visual.thumbnailUrl
+          );
+          if (stockVideo) {
+            visualDesc = `Visual: ${stockVideo.description}.`;
+          }
+        }
+        return `Scene ${index + 1} Script: "${
+          scene.audio.scriptText
+        }"\n${visualDesc}`;
+      })
+      .join('\n\n');
 
-    const prompt = `Generate a video illustrating the following story: "${fullScript}"`;
+    const prompt = `You are a video director. Create a cohesive video based on the following storyboard. Each scene has a script and a visual description. The final video should have a consistent tone and style, flowing seamlessly from one scene to the next.\n\nStoryboard:\n${fullStory}`;
 
     let { operation } = await ai.generate({
       model: 'googleai/veo-2.0-generate-001',
