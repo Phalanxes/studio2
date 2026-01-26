@@ -12,6 +12,7 @@ export interface Scene {
     type: 'tts';
     scriptText: string;
     voiceId: string;
+    url?: string;
   };
 }
 
@@ -20,6 +21,7 @@ export interface VoicePersona {
   name: string;
   description: string;
   gender: 'Male' | 'Female' | 'Neutral';
+  apiVoiceName: string;
 }
 
 export interface StockVideo {

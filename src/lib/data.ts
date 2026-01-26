@@ -7,30 +7,35 @@ export const voicePersonas: VoicePersona[] = [
     name: 'Male - Deep',
     description: 'A deep, authoritative male voice.',
     gender: 'Male',
+    apiVoiceName: 'Arcturus',
   },
   {
     id: 'female-energetic',
     name: 'Female - Energetic',
     description: 'An upbeat and energetic female voice.',
     gender: 'Female',
+    apiVoiceName: 'Capella',
   },
   {
     id: 'male-narrator',
     name: 'Male - Narrator',
     description: 'A calm and steady male narrator voice.',
     gender: 'Male',
+    apiVoiceName: 'Algenib',
   },
   {
     id: 'female-soft',
     name: 'Female - Soft',
     description: 'A soft and gentle female voice.',
     gender: 'Female',
+    apiVoiceName: 'Achernar',
   },
   {
     id: 'neutral-robot',
     name: 'Neutral - Robotic',
     description: 'A neutral, robotic voice.',
     gender: 'Neutral',
+    apiVoiceName: 'Sirius',
   },
 ];
 
