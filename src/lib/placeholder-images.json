@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "stock-video-1",
+      "description": "Abstract flowing colors",
+      "imageUrl": "https://images.unsplash.com/photo-1557672172-298e090bd0f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhYnN0cmFjdCUyMGNvbG9yc3xlbnwwfHx8fDE3NjkzNjM1Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract colors"
+    },
+    {
+      "id": "stock-video-2",
+      "description": "City nightlife timelapse",
+      "imageUrl": "https://images.unsplash.com/photo-1531819177115-428566ccfb50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaXR5JTIwbmlnaHR8ZW58MHx8fHwxNzY5MzkyNTc5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city night"
+    },
+    {
+      "id": "stock-video-3",
+      "description": "Nature scene with a waterfall",
+      "imageUrl": "https://images.unsplash.com/photo-1542157565-4607d82cf417?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuYXR1cmUlMjB3YXRlcmZhbGx8ZW58MHx8fHwxNzY5MzczNDA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "nature waterfall"
+    },
+    {
+      "id": "stock-video-4",
+      "description": "Close-up of a computer screen with code",
+      "imageUrl": "https://images.unsplash.com/photo-1569748130764-3fed0c102c59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21wdXRlciUyMGNvZGV8ZW58MHx8fHwxNzY5MzYyNTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "computer code"
+    },
+    {
+      "id": "stock-video-5",
+      "description": "People working in an office",
+      "imageUrl": "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxvZmZpY2UlMjB3b3JrfGVufDB8fHx8MTc2OTM4NDkwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office work"
+    },
+    {
+      "id": "stock-video-6",
+      "description": "A rocket launch",
+      "imageUrl": "https://images.unsplash.com/photo-1457364887197-9150188c107b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyb2NrZXQlMjBsYXVuY2h8ZW58MHx8fHwxNzY5MzU4NzAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rocket launch"
+    }
+  ]
 }
